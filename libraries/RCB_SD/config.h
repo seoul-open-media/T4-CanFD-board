@@ -1,0 +1,10 @@
+#ifndef ROBOT_CONTROL_BOARD_SD_CONFIG_H
+#define ROBOT_CONTROL_BOARD_SD_CONFIG_H
+
+// SD Card pins
+#define SDCARD_CS_PIN 10
+#define SDCARD_MOSI_PIN 11
+#define SDCARD_MISO_PIN 12
+#define SDCARD_SCK_PIN 13
+
+#endif

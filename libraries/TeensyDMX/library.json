@@ -1,0 +1,19 @@
+{
+  "name": "TeensyDMX",
+  "description": "A full-featured DMX library for Teensy 3, Teensy LC, and Teensy 4. Features include error detection and tracking, variable packet sizes, variable transmission rates, and a synchronous mode for inserting and detecting specifically-ordered packets (for example, for SIP and RDM). Other features include reasonably accurate BREAK and MAB timings, a 16-bit API, and packet statistics.",
+  "keywords": "dmx, teensy",
+  "authors": {
+    "name": "Shawn Silverman",
+    "email": "shawn@pobox.com",
+    "maintainer": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssilverman/TeensyDMX"
+  },
+  "version": "4.2.0",
+  "license": "BSD-3-Clause-Clear",
+  "homepage": "https://github.com/ssilverman/TeensyDMX",
+  "frameworks": "arduino",
+  "platforms": "teensy"
+}

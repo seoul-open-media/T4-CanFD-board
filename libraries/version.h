@@ -1,0 +1,8 @@
+#ifndef ROBOT_CONTROL_BOARD_DISPLAY_VERSION_H
+#define ROBOT_CONTROL_BOARD_DISPLAY_VERSION_H
+
+// Robot Control Board version
+#define VERSION 0.1
+#define SOFT_VERSION 0.1
+
+#endif
