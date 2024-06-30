@@ -25,7 +25,7 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-
+//#include <i2c_driver_wire.h>
 // REGISTER ADDRESSES
 #define PCA9685_MODE1 0x00      /**< Mode Register 1 */
 #define PCA9685_MODE2 0x01      /**< Mode Register 2 */

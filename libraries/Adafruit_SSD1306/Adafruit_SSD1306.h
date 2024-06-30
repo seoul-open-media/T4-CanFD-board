@@ -25,15 +25,12 @@
 #define _Adafruit_SSD1306_H_
 
 // ONE of the following three lines must be #defined:
-//#define SSD1306_128_64 ///< DEPRECTAED: old way to specify 128x64 screen
-#define SSD1306_128_32 ///< DEPRECATED: old way to specify 128x32 screen
+#define SSD1306_128_64 ///< DEPRECTAED: old way to specify 128x64 screen
+//#define SSD1306_128_32 ///< DEPRECATED: old way to specify 128x32 screen
 //#define SSD1306_96_16  ///< DEPRECATED: old way to specify 96x16 screen
 // This establishes the screen dimensions in old Adafruit_SSD1306 sketches
 // (NEW CODE SHOULD IGNORE THIS, USE THE CONSTRUCTORS THAT ACCEPT WIDTH
 // AND HEIGHT ARGUMENTS).
-
-// Uncomment to disable Adafruit splash logo
-//#define SSD1306_NO_SPLASH
 
 #if defined(ARDUINO_STM32_FEATHER)
 typedef class HardwareSPI SPIClass;
@@ -129,7 +126,7 @@ typedef uint32_t PortMask;
 class Adafruit_SSD1306 : public Adafruit_GFX {
 public:
   // NEW CONSTRUCTORS -- recommended for new projects
-  Adafruit_SSD1306(uint8_t w, uint8_t h, TwoWire *twi = &Wire,
+  Adafruit_SSD1306(uint8_t w, uint8_t h, TwoWire *twi = &Wire1,
                    int8_t rst_pin = -1, uint32_t clkDuring = 400000UL,
                    uint32_t clkAfter = 100000UL);
   Adafruit_SSD1306(uint8_t w, uint8_t h, int8_t mosi_pin, int8_t sclk_pin,
@@ -163,39 +160,27 @@ public:
   bool getPixel(int16_t x, int16_t y);
   uint8_t *getBuffer(void);
 
-protected:
+private:
   inline void SPIwrite(uint8_t d) __attribute__((always_inline));
   void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color);
   void drawFastVLineInternal(int16_t x, int16_t y, int16_t h, uint16_t color);
   void ssd1306_command1(uint8_t c);
   void ssd1306_commandList(const uint8_t *c, uint8_t n);
 
-  SPIClass *spi;   ///< Initialized during construction when using SPI. See
-                   ///< SPI.cpp, SPI.h
-  TwoWire *wire;   ///< Initialized during construction when using I2C. See
-                   ///< Wire.cpp, Wire.h
-  uint8_t *buffer; ///< Buffer data used for display buffer. Allocated when
-                   ///< begin method is called.
-  int8_t i2caddr;  ///< I2C address initialized when begin method is called.
-  int8_t vccstate; ///< VCC selection, set by begin method.
-  int8_t page_end; ///< not used
-  int8_t mosiPin;  ///< (Master Out Slave In) set when using SPI set during
-                   ///< construction.
-  int8_t clkPin;   ///< (Clock Pin) set when using SPI set during construction.
-  int8_t dcPin;    ///< (Data Pin) set when using SPI set during construction.
-  int8_t
-      csPin; ///< (Chip Select Pin) set when using SPI set during construction.
-  int8_t rstPin; ///< Display reset pin assignment. Set during construction.
-
+  SPIClass *spi;
+  TwoWire *wire;
+  uint8_t *buffer;
+  int8_t i2caddr, vccstate, page_end;
+  int8_t mosiPin, clkPin, dcPin, csPin, rstPin;
 #ifdef HAVE_PORTREG
   PortReg *mosiPort, *clkPort, *dcPort, *csPort;
   PortMask mosiPinMask, clkPinMask, dcPinMask, csPinMask;
 #endif
 #if ARDUINO >= 157
-  uint32_t wireClk;    ///< Wire speed for SSD1306 transfers
-  uint32_t restoreClk; ///< Wire speed following SSD1306 transfers
+  uint32_t wireClk;    // Wire speed for SSD1306 transfers
+  uint32_t restoreClk; // Wire speed following SSD1306 transfers
 #endif
-  uint8_t contrast; ///< normal contrast setting for this device
+  uint8_t contrast; // normal contrast setting for this device
 #if defined(SPI_HAS_TRANSACTION)
 protected:
   // Allow sub-class to change
