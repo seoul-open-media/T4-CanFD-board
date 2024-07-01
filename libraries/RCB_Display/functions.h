@@ -35,7 +35,7 @@ void displayControlBaordData()
 {
     clearDisplay();
 
-    display.print("RobotCtrlBoard v.");
+    display.print("T4 CanFD board v.");
     display.println(VERSION);
     display.println();
     display.print("Software v.");
