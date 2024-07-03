@@ -6,9 +6,11 @@ void setup()
   Serial.begin(115200);
   initDisplay();
   displayControlBaordData();
-  Serial.print("End of Setup");
+  Serial.println("End of Setup");
+  clearDisplay();
+  display.println("Hi");
+  display.display();
 }
 
 void loop() {
-
 }
