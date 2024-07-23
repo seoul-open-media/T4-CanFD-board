@@ -79,10 +79,10 @@ void setup() {
   pinMode(pwmPin3, OUTPUT);
   pinMode(pwmPin4, OUTPUT);
 
-  digitalWrite(pwmPin1, 0);
-  digitalWrite(pwmPin2, 0);
-  digitalWrite(pwmPin3, 0);
-  digitalWrite(pwmPin4, 0);
+  digitalWrite(pwmPin1, 1);
+  digitalWrite(pwmPin2, 1);
+  digitalWrite(pwmPin3, 1);
+  digitalWrite(pwmPin4, 1);
 
   Serial.begin(115200);
   Wire.begin();

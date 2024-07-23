@@ -8,7 +8,7 @@ void setup()
   displayControlBaordData();
   Serial.println("End of Setup");
   clearDisplay();
-  display.println("Hi");
+  display.println("T4 CanFD v.1.5");
   display.display();
 }
 
