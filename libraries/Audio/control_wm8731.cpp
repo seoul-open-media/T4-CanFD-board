@@ -26,7 +26,7 @@
 
 #include <Arduino.h>
 #include "control_wm8731.h"
-#include "i2c_driver_wire.h"
+#include "Wire.h"
 
 #define WM8731_I2C_ADDR 0x1A
 //#define WM8731_I2C_ADDR 0x1B

@@ -8,7 +8,7 @@
  */
 
 #include "control_tlv320aic3206.h"
-#include <i2c_driver_wire.h>
+#include <Wire.h>
 
 //********************************  Constants  *******************************//
 

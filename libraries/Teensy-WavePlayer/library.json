@@ -1,0 +1,26 @@
+{
+  "name": "Teensy WavePlayer",
+  "keywords": "Audio",
+  "description": "Extended Wave Player",
+  "authors": [
+    {
+        "name": "Frank Boesing",
+        "url": "https://github.com/FrankBoesing/",
+        "maintainer": true
+    }   
+  ],
+  "exclude": [
+    "extras",
+    "gui",
+    "example wave files",
+    "Audio Library"
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/FrankBoesing/Teensy-WavePlayer.git"
+  },
+  "version": "0.60",
+  "frameworks": "arduino",
+  "platforms": "*"
+}

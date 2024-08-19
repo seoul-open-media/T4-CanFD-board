@@ -26,7 +26,7 @@
 
 #include <Arduino.h>
 #include "control_sgtl5000.h"
-#include "i2c_driver_wire.h"
+#include "Wire.h"
 
 #define CHIP_ID				0x0000
 // 15:8 PARTID		0xA0 - 8 bit identifier for SGTL5000
