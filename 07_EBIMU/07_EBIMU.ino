@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////
 /////////////////////// EBIMU FUNCTION /////////////////////////////
 // EBIMU is conneting to the Serial2 input
-https://seoul-open-media.slack.com/archives/C0536BN2HQS/p1724106851417339?thread_ts=1723927283.018599&cid=C0536BN2HQS
+//https://seoul-open-media.slack.com/archives/C0536BN2HQS/p1724106851417339?thread_ts=1723927283.018599&cid=C0536BN2HQS
  
 
-#define HWSERIAL Serial2
+#define HWSERIAL Serial2 // T4 pin 16, 17, micromod Serial2
 
 #define SBUF_SIZE 64
 
