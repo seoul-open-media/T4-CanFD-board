@@ -8,7 +8,7 @@ int pushButton1 = 23; // L
 int pushButton2 = 29; //R
 
 void setup() {
-
+ 
   Serial.begin(9600);
 
   pinMode(pushButton1, INPUT);

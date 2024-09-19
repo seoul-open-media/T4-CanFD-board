@@ -2,7 +2,9 @@
 /////////////////////// EBIMU FUNCTION /////////////////////////////
 // EBIMU is conneting to the Serial2 input
 //https://seoul-open-media.slack.com/archives/C0536BN2HQS/p1724106851417339?thread_ts=1723927283.018599&cid=C0536BN2HQS
- 
+#include <Wire.h>
+#include "RCB_Display.h"
+
 
 #define HWSERIAL Serial2 // T4 pin 16, 17, micromod Serial2
 
@@ -55,6 +57,13 @@ void setup() {
   Serial.begin(115200);
   HWSERIAL.begin(57600); // Set the configuration with GTKTERM <lf> <sb4><sor10> : factory reset, baudrate 9600, report every 10ms.
   Serial.println("EBIMU test");
+  initDisplay();
+  displayControlBaordData();
+  Serial.println("End of Setup");
+  clearDisplay();
+  display.println("EBIMU test");
+  display.display();
+  delay(2000);
 }
 
 void loop() {
@@ -66,5 +75,11 @@ void loop() {
      Serial.print(euler[0]);   Serial.print(" ");
      Serial.print(euler[1]);   Serial.print(" ");
      Serial.print(euler[2]);   Serial.print(" ");
+
+//     clearDisplay();
+//     display.print(euler[0]);   display.print(" ");
+//     display.print(euler[1]);   display.print(" ");
+//     display.print(euler[2]);   display.print(" ");
+//     display.display();
   }
 }
