@@ -35,6 +35,7 @@ void loop() {
     for (int i = 0; i < 10; i++){
        XBEESERIAL.write(i);
     }
+    lastTimeSent = millis();
   }
   
 }
