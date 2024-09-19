@@ -31,7 +31,7 @@ void loop() {
 
   unsigned long lastTimeSent;
   if(millis()> lastTimeSent + 1000){
-    XBEESERIAL.write(255);
+    XBEESERIAL.write(255);XBEESERIAL.write(255);XBEESERIAL.write(255);XBEESERIAL.write(255);
     for (int i = 0; i < 10; i++){
        XBEESERIAL.write(i);
     }
