@@ -22,6 +22,7 @@ int EBimuAsciiParser(float *item, int number_of_item)
   int result = 0;
   
   rbytes = HWSERIAL.available();
+  Serial.print("rbytes:");  Serial.println(rbytes); 
   for(n=0;n<rbytes;n++)
   {
     sbuf[sbuf_cnt] = HWSERIAL.read();
