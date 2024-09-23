@@ -67,7 +67,7 @@ void setup() {
   Serial.begin(115200);
   Wire.begin();
   //  Wire.setClock(400000);
-  Wire1.begin();
+ // Wire1.begin();
   delay(1000);
 
   if (neokey.begin(0x30)) {     // begin with I2C address, default is 0x30

@@ -70,12 +70,13 @@ void setup() {
   LPS_SERIAL.begin(9600);
   delay(1000);
   Wire.begin();
-
+  Serial.println("NeoKey");
 
   if (neokey.begin(0x30)) {     // begin with I2C address, default is 0x30
     // enter configuration mode
     Serial.println("NeoKey started!");
   }
+  Serial.println("NeoKey End");
   // Pulse all the LEDs on to show we're working
   for (uint16_t i = 0; i < neokey.pixels.numPixels(); i++) {
     neokey.pixels.setPixelColor(i, 0x808080); // make each LED white
@@ -106,11 +107,11 @@ void setup() {
 
   const uint32_t errorCode = can.begin(settings, [] { can.isr(); });
 
-  while (errorCode != 0) {
-    Serial.print(F("CAN error 0x"));
-    Serial.println(errorCode, HEX);
-    delay(1000);
-  }
+//  while (errorCode != 0) {
+//    Serial.print(F("CAN error 0x"));
+//    Serial.println(errorCode, HEX);
+//    delay(1000);
+//  }
 
   // To clear any faults the controllers may have, we start by sending
   // a stop command to each.
