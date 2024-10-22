@@ -19,6 +19,22 @@ void setup() {
   display.println("Data from Xbee");
   display.display();
   Serial.println("End of Setup");
+  XBEESERIAL.write(255);
+  XBEESERIAL.write(255);
+  XBEESERIAL.write(255);
+  XBEESERIAL.write(255);
+  XBEESERIAL.write(1);
+  unsigned long lastTimeSent;
+  //if (millis() > lastTimeSent + 1000) {
+
+  // XBEESERIAL.write(1); XBEESERIAL.write(2); XBEESERIAL.write(3);
+  /*   for (int i = 0; i < 10; i++) {
+       XBEESERIAL.write(i);
+     }
+     lastTimeSent = millis();
+  */
+  // }
+
 }
 
 void loop() {
@@ -29,13 +45,13 @@ void loop() {
     display.display();
   }
 
-  unsigned long lastTimeSent;
-  if(millis()> lastTimeSent + 1000){
-    XBEESERIAL.write(255);XBEESERIAL.write(255);XBEESERIAL.write(255);XBEESERIAL.write(255);
-    for (int i = 0; i < 10; i++){
-       XBEESERIAL.write(i);
+    unsigned long lastTimeSent;
+    if (millis() > lastTimeSent + 1000) {
+      XBEESERIAL.write(255); XBEESERIAL.write(255); XBEESERIAL.write(255); XBEESERIAL.write(255);
+      for (int i = 0; i < 10; i++) {
+      //  XBEESERIAL.write(i);
+      }
+      lastTimeSent = millis();
     }
-    lastTimeSent = millis();
-  }
-  
+
 }
